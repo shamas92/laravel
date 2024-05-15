@@ -5,11 +5,7 @@ Route::get('/', function () {
     return view('welcome', ['title' => 'This is Title']);
 });
 
-/**
- * =======================
- *      LTR ROUTERS
- * =======================
- */
+
 
 $prefixRouters = [
     'light-menu', 'dark-menu'

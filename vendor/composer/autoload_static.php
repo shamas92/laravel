@@ -357,8 +357,8 @@ class ComposerStaticInit39136f4ee634de64ad1fc5cd3d9038aa
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -580,7 +580,6 @@ class ComposerStaticInit39136f4ee634de64ad1fc5cd3d9038aa
         'App\\View\\Components\\LayoutFooter' => __DIR__ . '/../..' . '/app/View/Components/LayoutFooter.php',
         'App\\View\\Components\\LayoutLoader' => __DIR__ . '/../..' . '/app/View/Components/LayoutLoader.php',
         'App\\View\\Components\\LayoutOverlay' => __DIR__ . '/../..' . '/app/View/Components/LayoutOverlay.php',
-        'App\\View\\Components\\Menu\\horizontalMenu' => __DIR__ . '/../..' . '/app/View/Components/Menu/horizontalMenu.php',
         'App\\View\\Components\\Menu\\verticalMenu' => __DIR__ . '/../..' . '/app/View/Components/Menu/verticalMenu.php',
         'App\\View\\Components\\Widgets\\_wActivityFive' => __DIR__ . '/../..' . '/app/View/Components/Widgets/_wActivityFive.php',
         'App\\View\\Components\\Widgets\\_wActivityFour' => __DIR__ . '/../..' . '/app/View/Components/Widgets/_wActivityFour.php',
@@ -605,10 +604,6 @@ class ComposerStaticInit39136f4ee634de64ad1fc5cd3d9038aa
         'App\\View\\Components\\Widgets\\_wWalletOne' => __DIR__ . '/../..' . '/app/View/Components/Widgets/_wWalletOne.php',
         'App\\View\\Components\\baseLayout' => __DIR__ . '/../..' . '/app/View/Components/baseLayout.php',
         'App\\View\\Components\\navbar\\styleVerticalMenu' => __DIR__ . '/../..' . '/app/View/Components/navbar/styleVerticalMenu.php',
-        'App\\View\\Components\\rtl\\Menu\\horizontalMenu' => __DIR__ . '/../..' . '/app/View/Components/rtl/Menu/horizontalMenu.php',
-        'App\\View\\Components\\rtl\\Menu\\verticalMenu' => __DIR__ . '/../..' . '/app/View/Components/rtl/Menu/verticalMenu.php',
-        'App\\View\\Components\\rtl\\navbar\\styleVerticalMenu' => __DIR__ . '/../..' . '/app/View/Components/rtl/navbar/styleVerticalMenu.php',
-        'App\\View\\Components\\rtl\\ttt' => __DIR__ . '/../..' . '/app/View/Components/rtl/ttt.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'BaconQrCode\\Common\\BitArray' => __DIR__ . '/..' . '/bacon/bacon-qr-code/src/Common/BitArray.php',
         'BaconQrCode\\Common\\BitMatrix' => __DIR__ . '/..' . '/bacon/bacon-qr-code/src/Common/BitMatrix.php',

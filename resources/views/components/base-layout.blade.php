@@ -166,18 +166,6 @@
                 <x-navbar.style-vertical-menu classes="{{($isBoxed ? 'container-xxl' : '')}}"/>
                 <!--  END NAVBAR  -->
 
-            @elseif (Request::is('horizontal-light-menu/*'))
-
-                <!--  BEGIN NAVBAR  -->
-                <x-navbar.style-horizontal-menu/>
-                <!--  END NAVBAR  -->
-            
-            @elseif (Request::is('horizontal-dark-menu/*'))
-
-                <!--  BEGIN NAVBAR  -->
-                <x-navbar.style-horizontal-menu/>
-                <!--  END NAVBAR  -->
-
             @else
 
                 <!--  BEGIN NAVBAR  -->
@@ -215,18 +203,6 @@
                     <x-menu.vertical-menu/>
                     <!--  END SIDEBAR  --> 
 
-                @elseif (Request::is('horizontal-light-menu/*'))
-
-                    <!--  BEGIN SIDEBAR  -->
-                    <x-menu.horizontal-menu/>
-                    <!--  END SIDEBAR  --> 
-                
-                @elseif (Request::is('horizontal-dark-menu/*'))
-
-                    <!--  BEGIN SIDEBAR  -->
-                    <x-menu.horizontal-menu/>
-                    <!--  END SIDEBAR  --> 
-                
                 @else
                 
                     <!--  BEGIN SIDEBAR  -->

@@ -332,7 +332,7 @@
     <x-slot:footerFiles>
         <script src="{{asset('plugins/global/vendors.min.js')}}"></script>
         <script src="{{asset('plugins/jquery-ui/jquery-ui.min.js')}}"></script>
-        @vite(['resources/assets/js/apps/scrumboard.js'])
+        @vite(['resources/assets/js/apps/resolutions.js'])
     </x-slot>
     <!--  END CUSTOM SCRIPTS FILE  -->
 </x-base-layout>
