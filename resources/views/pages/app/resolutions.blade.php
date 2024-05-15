@@ -17,7 +17,7 @@
     <!-- END GLOBAL MANDATORY STYLES -->
     
     <div class="action-btn layout-top-spacing mb-5">
-        <button id="add-list" class="btn btn-secondary">Add List</button>
+        <button id="add-list" class="btn btn-secondary">Add Process</button>
     </div>
     <div class="modal fade" id="addTaskModal" tabindex="-1" role="dialog" aria-labelledby="addTaskModalTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
