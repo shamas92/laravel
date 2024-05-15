@@ -1825,7 +1825,7 @@
         <script src="{{asset('plugins/editors/quill/quill.js')}}"></script>
         <script src="{{asset('plugins/sweetalerts2/sweetalerts2.min.js')}}"></script>
         <script src="{{asset('plugins/notification/snackbar/snackbar.min.js')}}"></script>
-        @vite(['resources/assets/js/apps/mailbox.js'])
+        @vite(['resources/assets/js/apps/feedbacks.js'])
     </x-slot>
     <!--  END CUSTOM SCRIPTS FILE  -->
 </x-base-layout>
