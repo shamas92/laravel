@@ -8,10 +8,10 @@
     <x-slot:headerFiles>
         <!--  BEGIN CUSTOM STYLE FILE  -->
         @vite(['resources/scss/light/assets/components/modal.scss'])
-        @vite(['resources/scss/light/assets/apps/scrumboard.scss'])
+        @vite(['resources/scss/light/assets/apps/resolutions.scss'])
 
         @vite(['resources/scss/dark/assets/components/modal.scss'])
-        @vite(['resources/scss/dark/assets/apps/scrumboard.scss'])
+        @vite(['resources/scss/dark/assets/apps/resolutions.scss'])
         <!--  END CUSTOM STYLE FILE  -->
     </x-slot>
     <!-- END GLOBAL MANDATORY STYLES -->

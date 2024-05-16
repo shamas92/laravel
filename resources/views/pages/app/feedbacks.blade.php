@@ -11,12 +11,12 @@
         <link rel="stylesheet" href="{{asset('plugins/sweetalerts2/sweetalerts2.css')}}">
         @vite(['resources/scss/light/assets/components/modal.scss'])
         @vite(['resources/scss/light/plugins/editors/quill/quill.snow.scss'])
-        @vite(['resources/scss/light/assets/apps/mailbox.scss'])
+        @vite(['resources/scss/light/assets/apps/feedbacks.scss'])
         @vite(['resources/scss/light/plugins/sweetalerts2/custom-sweetalert.scss'])
 
         @vite(['resources/scss/dark/assets/components/modal.scss'])
         @vite(['resources/scss/dark/plugins/editors/quill/quill.snow.scss'])
-        @vite(['resources/scss/dark/assets/apps/mailbox.scss'])
+        @vite(['resources/scss/dark/assets/apps/feedbacks.scss'])
         @vite(['resources/scss/dark/plugins/sweetalerts2/custom-sweetalert.scss'])
         <!--  END CUSTOM STYLE FILE  -->
     </x-slot>
