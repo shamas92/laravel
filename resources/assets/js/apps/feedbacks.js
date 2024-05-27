@@ -218,55 +218,10 @@ $(document).ready(function() {
 	var $_getValidationField = document.getElementsByClassName('validation-text');
 	var emailReg = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-	let getEmailToInput = document.getElementById('m-to');
+	
 
-	getEmailToInput.addEventListener('input', function() {
-
-	  	let getEmailToInputValue = this.value;
-
-	    if (getEmailToInputValue == "") {
-	      $_getValidationField[0].innerHTML = 'Email Required';
-	      $_getValidationField[0].style.display = 'block';
-	    } else if((emailReg.test(getEmailToInputValue) == false)) {
-	      $_getValidationField[0].innerHTML = 'Invalid Email';
-	      $_getValidationField[0].style.display = 'block';
-	    } else {
-	      $_getValidationField[0].style.display = 'none';
-	    }
-	})
-
-	let getCCEmailInput = document.getElementById('m-cc');
-	getCCEmailInput.addEventListener('input', function() {
-
-	    let getCCEmailInputValue = this.value;
-
-	    if (!getCCEmailInputValue == "") {
-	       if((emailReg.test(getCCEmailInputValue) == false)) {
-		      $_getValidationField[1].innerHTML = 'Invalid Email';
-		      $_getValidationField[1].style.display = 'block';
-		    } else {
-		      	$_getValidationField[1].style.display = 'none';
-		    }
-	    } else {
-	      $_getValidationField[1].style.display = 'none';
-	    }
-
-	})
-
-	let getSubjectInput = document.getElementById('m-subject');
-
-	getSubjectInput.addEventListener('input', function() {
-
-	  let getSubjectInput = this.value;
-
-	  if (getSubjectInput == "") {
-	    $_getValidationField[2].innerHTML = 'Subject Required';
-	    $_getValidationField[2].style.display = 'block';
-	  } else {
-	    $_getValidationField[2].style.display = 'none';
-	  }
-
-	})
+	
+	
 
 	
 	/*
