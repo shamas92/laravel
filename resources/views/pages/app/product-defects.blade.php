@@ -1,5 +1,6 @@
 <x-base-layout :scrollspy="false">
     <x-slot:pageTitle>
+        
         </x-slot>
 
         <!-- BEGIN GLOBAL MANDATORY STYLES -->

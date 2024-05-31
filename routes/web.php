@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\defectController;
 use Illuminate\Support\Facades\Route;
-use App\Models\defect;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +17,6 @@ use App\Models\defect;
 require_once 'theme-routes.php';
 
 
-// Route::get('product-defects', [
-//     defectController::class,
-//     'getData'
-// ]);
 Route::get('/barebone', function () {
     return view('barebone', ['title' => 'This is Title']);
 });
