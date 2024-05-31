@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\defectController;
 
 //use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
@@ -39,9 +40,9 @@ foreach ($prefixRouters as $prefixRouter) {
          */
         
          Route::prefix('app')->group(function () {
-            Route::get('/product-defects', function () {
-                return view('pages.app.product-defects', ['title' => 'Defects']);
-            })->name('product-defects');
+            Route::get('/product-defects', [defectController::class, 'defectlist']);
+            Route::get('delete/{id}', [defectController::class,'delete']);
+            
             Route::get('/feedbacks', function () {
                 return view('pages.app.feedbacks', ['title' => 'Feedbacks']);
             })->name('feedbacks');

@@ -1,6 +1,5 @@
 <x-base-layout :scrollspy="false">
     <x-slot:pageTitle>
-        {{$title}}
         </x-slot>
 
         <!-- BEGIN GLOBAL MANDATORY STYLES -->
@@ -28,6 +27,7 @@
                                 <div class="col-md-12 col-sm-12 col-12 text-center">
                                     <h5 class="app-title">Product Defects</h5>
                                 </div>
+
                                 <div class="col-md-12 col-sm-12 col-12 ps-0">
                                     <div class="todoList-sidebar-scroll mt-4">
                                         <ul class="nav nav-pills d-block" id="pills-tab" role="tablist">
@@ -79,6 +79,7 @@
                             <div class="todo-box">
 
                                 <div id="ct" class="todo-box-scroll">
+                                    @foreach($defects as $defs)
                                     <div class="todo-item all-list">
                                         <div class="todo-item-inner">
                                             <div class="n-chk text-center">
@@ -88,8 +89,8 @@
                                             </div>
 
                                             <div class="todo-content">
-                                                <h5 class="todo-heading" data-todoHeading="Defect 1">Defect 1</h5>
-                                                <p class="todo-text" data-todoHtml="<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pulvinar feugiat consequat. Duis lacus nibh, sagittis id varius vel, aliquet non augue. Vivamus sem ante, ultrices at ex a, rhoncus ullamcorper tellus. Nunc iaculis eu ligula ac consequat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum mattis urna neque, eget posuere lorem tempus non. Suspendisse ac turpis dictum, convallis est ut, posuere sem. Etiam imperdiet aliquam risus, eu commodo urna vestibulum at. Suspendisse malesuada lorem eu sodales aliquam.</p>" data-todoText='{"ops":[{"insert":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pulvinar feugiat consequat. Duis lacus nibh, sagittis id varius vel, aliquet non augue. Vivamus sem ante, ultrices at ex a, rhoncus ullamcorper tellus. Nunc iaculis eu ligula ac consequat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum mattis urna neque, eget posuere lorem tempus non. Suspendisse ac turpis dictum, convallis est ut, posuere sem. Etiam imperdiet aliquam risus, eu commodo urna vestibulum at. Suspendisse malesuada lorem eu sodales aliquam.\n"}]}'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pulvinar feugiat consequat. Duis lacus nibh, sagittis id varius vel, aliquet non augue. Vivamus sem ante, ultrices at ex a, rhoncus ullamcorper tellus. Nunc iaculis eu ligula ac consequat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum mattis urna neque, eget posuere lorem tempus non. Suspendisse ac turpis dictum, convallis est ut, posuere sem. Etiam imperdiet aliquam risus, eu commodo urna vestibulum at. Suspendisse malesuada lorem eu sodales aliquam.</p>
+                                                <h5 class="todo-heading" data-todoHeading="{{$defs['defect_title']}}">{{$defs['defect_title']}}</h5>
+                                                <p class="todo-text" data-todoHtml="<p>{{$defs['description']}}</p>" data-todoText='{"ops":[{"insert":"{{$defs['defect_title']}}"}]}'>{{$defs['description']}}</p>
                                             </div>
 
                                             <div class="priority-dropdown custom-dropdown-icon">
@@ -135,205 +136,15 @@
                                                     <div class="dropdown-menu left" aria-labelledby="dropdownMenuLink-2">
                                                         <a class="edit dropdown-item" href="javascript:void(0);">Edit</a>
                                                         <a class="dropdown-item delete" href="javascript:void(0);">Delete</a>
-                                                        <a class="dropdown-item permanent-delete" href="javascript:void(0);">Permanent Delete</a>
+                                                        <a class="dropdown-item permanent-delete" href={{"delete/".$defs['id'] }}>Permanent Delete</a>
                                                         <a class="dropdown-item revive" href="javascript:void(0);">Revive Defect</a>
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
-                                    <div class="todo-item all-list">
-                                        <div class="todo-item-inner">
-                                            <div class="n-chk text-center">
-                                                <div class="form-check form-check-primary form-check-inline mt-1 me-0" data-bs-toggle="collapse" data-bs-target>
-                                                    <input class="form-check-input inbox-chkbox" type="checkbox">
-                                                </div>
-                                            </div>
+                                    @endforeach
 
-                                            <div class="todo-content">
-                                                <h5 class="todo-heading" data-todoHeading="Defect 2"> Defect 2</h5>
-                                                <p class="todo-text" data-todoHtml="<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pulvinar feugiat consequat. Duis lacus nibh, sagittis id varius vel, aliquet non augue. Vivamus sem ante, ultrices at ex a, rhoncus ullamcorper tellus. Nunc iaculis eu ligula ac consequat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum mattis urna neque, eget posuere lorem tempus non. Suspendisse ac turpis dictum, convallis est ut, posuere sem. Etiam imperdiet aliquam risus, eu commodo urna vestibulum at. Suspendisse malesuada lorem eu sodales aliquam.</p>" data-todoText='{"ops":[{"insert":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pulvinar feugiat consequat. Duis lacus nibh, sagittis id varius vel, aliquet non augue. Vivamus sem ante, ultrices at ex a, rhoncus ullamcorper tellus. Nunc iaculis eu ligula ac consequat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum mattis urna neque, eget posuere lorem tempus non. Suspendisse ac turpis dictum, convallis est ut, posuere sem. Etiam imperdiet aliquam risus, eu commodo urna vestibulum at. Suspendisse malesuada lorem eu sodales aliquam.\n"}]}'> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pulvinar feugiat consequat. Duis lacus nibh, sagittis id varius vel, aliquet non augue. Vivamus sem ante, ultrices at ex a, rhoncus ullamcorper tellus. Nunc iaculis eu ligula ac consequat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum mattis urna neque, eget posuere lorem tempus non. Suspendisse ac turpis dictum, convallis est ut, posuere sem. Etiam imperdiet aliquam risus, eu commodo urna vestibulum at. Suspendisse malesuada lorem eu sodales aliquam.</p>
-                                            </div>
-
-                                            <div class="priority-dropdown custom-dropdown-icon">
-                                                <div class="dropdown p-dropdown">
-                                                    <a class="dropdown-toggle primary" href="#" role="button" id="dropdownMenuLink-3" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-octagon">
-                                                            <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
-                                                            <line x1="12" y1="8" x2="12" y2="12"></line>
-                                                            <line x1="12" y1="16" x2="12" y2="16"></line>
-                                                        </svg>
-                                                    </a>
-
-                                                    <div class="dropdown-menu left" aria-labelledby="dropdownMenuLink-3">
-                                                        <a class="dropdown-item danger" href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-octagon">
-                                                                <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
-                                                                <line x1="12" y1="8" x2="12" y2="12"></line>
-                                                                <line x1="12" y1="16" x2="12" y2="16"></line>
-                                                            </svg> High</a>
-                                                        <a class="dropdown-item warning" href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-octagon">
-                                                                <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
-                                                                <line x1="12" y1="8" x2="12" y2="12"></line>
-                                                                <line x1="12" y1="16" x2="12" y2="16"></line>
-                                                            </svg> Middle</a>
-                                                        <a class="dropdown-item primary" href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-octagon">
-                                                                <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
-                                                                <line x1="12" y1="8" x2="12" y2="12"></line>
-                                                                <line x1="12" y1="16" x2="12" y2="16"></line>
-                                                            </svg> Low</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="action-dropdown custom-dropdown-icon">
-                                                <div class="dropdown">
-                                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink-4" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
-                                                            <circle cx="12" cy="12" r="1"></circle>
-                                                            <circle cx="12" cy="5" r="1"></circle>
-                                                            <circle cx="12" cy="19" r="1"></circle>
-                                                        </svg>
-                                                    </a>
-
-                                                    <div class="dropdown-menu left" aria-labelledby="dropdownMenuLink-4">
-                                                        <a class="edit dropdown-item" href="javascript:void(0);">Edit</a>
-                                                        <a class="dropdown-item delete" href="javascript:void(0);">Delete</a>
-                                                        <a class="dropdown-item permanent-delete" href="javascript:void(0);">Permanent Delete</a>
-                                                        <a class="dropdown-item revive" href="javascript:void(0);">Revive Defect</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="todo-item all-list todo-task-done">
-                                        <div class="todo-item-inner">
-                                            <div class="n-chk text-center">
-                                                <div class="form-check form-check-primary form-check-inline mt-1 me-0" data-bs-toggle="collapse" data-bs-target>
-                                                    <input class="form-check-input inbox-chkbox" type="checkbox" checked>
-                                                </div>
-                                            </div>
-
-                                            <div class="todo-content">
-                                                <h5 class="todo-heading" data-todoHeading="Defect 3"> Defect 3</h5>
-                                                <p class="todo-text" data-todoHtml="<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pulvinar feugiat consequat. Duis lacus nibh, sagittis id varius vel, aliquet non augue. Vivamus sem ante, ultrices at ex a, rhoncus ullamcorper tellus. Nunc iaculis eu ligula ac consequat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum mattis urna neque, eget posuere lorem tempus non. Suspendisse ac turpis dictum, convallis est ut, posuere sem. Etiam imperdiet aliquam risus, eu commodo urna vestibulum at. Suspendisse malesuada lorem eu sodales aliquam.</p>" data-todoText='{"ops":[{"insert":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pulvinar feugiat consequat. Duis lacus nibh, sagittis id varius vel, aliquet non augue. Vivamus sem ante, ultrices at ex a, rhoncus ullamcorper tellus. Nunc iaculis eu ligula ac consequat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum mattis urna neque, eget posuere lorem tempus non. Suspendisse ac turpis dictum, convallis est ut, posuere sem. Etiam imperdiet aliquam risus, eu commodo urna vestibulum at. Suspendisse malesuada lorem eu sodales aliquam.\n"}]}'> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pulvinar feugiat consequat. Duis lacus nibh, sagittis id varius vel, aliquet non augue. Vivamus sem ante, ultrices at ex a, rhoncus ullamcorper tellus. Nunc iaculis eu ligula ac consequat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum mattis urna neque, eget posuere lorem tempus non. Suspendisse ac turpis dictum, convallis est ut, posuere sem. Etiam imperdiet aliquam risus, eu commodo urna vestibulum at. Suspendisse malesuada lorem eu sodales aliquam.</p>
-                                            </div>
-
-                                            <div class="priority-dropdown custom-dropdown-icon">
-                                                <div class="dropdown p-dropdown">
-                                                    <a class="dropdown-toggle danger" href="#" role="button" id="dropdownMenuLink-5" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-octagon">
-                                                            <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
-                                                            <line x1="12" y1="8" x2="12" y2="12"></line>
-                                                            <line x1="12" y1="16" x2="12" y2="16"></line>
-                                                        </svg>
-                                                    </a>
-                                                    <div class="dropdown-menu left" aria-labelledby="dropdownMenuLink-5">
-                                                        <a class="dropdown-item danger" href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-octagon">
-                                                                <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
-                                                                <line x1="12" y1="8" x2="12" y2="12"></line>
-                                                                <line x1="12" y1="16" x2="12" y2="16"></line>
-                                                            </svg> High</a>
-                                                        <a class="dropdown-item warning" href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-octagon">
-                                                                <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
-                                                                <line x1="12" y1="8" x2="12" y2="12"></line>
-                                                                <line x1="12" y1="16" x2="12" y2="16"></line>
-                                                            </svg> Middle</a>
-                                                        <a class="dropdown-item primary" href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-octagon">
-                                                                <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
-                                                                <line x1="12" y1="8" x2="12" y2="12"></line>
-                                                                <line x1="12" y1="16" x2="12" y2="16"></line>
-                                                            </svg> Low</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="action-dropdown custom-dropdown-icon">
-                                                <div class="dropdown">
-                                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink-6" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
-                                                            <circle cx="12" cy="12" r="1"></circle>
-                                                            <circle cx="12" cy="5" r="1"></circle>
-                                                            <circle cx="12" cy="19" r="1"></circle>
-                                                        </svg>
-                                                    </a>
-                                                    <div class="dropdown-menu left" aria-labelledby="dropdownMenuLink-6">
-                                                        <a class="edit dropdown-item" href="javascript:void(0);">Edit</a>
-                                                        <a class="dropdown-item delete" href="javascript:void(0);">Delete</a>
-                                                        <a class="dropdown-item permanent-delete" href="javascript:void(0);">Permanent Delete</a>
-                                                        <a class="dropdown-item revive" href="javascript:void(0);">Revive Defect</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="todo-item all-list">
-                                        <div class="todo-item-inner">
-                                            <div class="n-chk text-center">
-                                                <div class="form-check form-check-primary form-check-inline mt-1 me-0" data-bs-toggle="collapse" data-bs-target>
-                                                    <input class="form-check-input inbox-chkbox" type="checkbox">
-                                                </div>
-                                            </div>
-
-                                            <div class="todo-content">
-                                                <h5 class="todo-heading" data-todoHeading="Defect 4">Defect 4</h5>
-                                                <p class="todo-text" data-todoHtml="<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pulvinar feugiat consequat. Duis lacus nibh, sagittis id varius vel, aliquet non augue. Vivamus sem ante, ultrices at ex a, rhoncus ullamcorper tellus. Nunc iaculis eu ligula ac consequat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum mattis urna neque, eget posuere lorem tempus non. Suspendisse ac turpis dictum, convallis est ut, posuere sem. Etiam imperdiet aliquam risus, eu commodo urna vestibulum at. Suspendisse malesuada lorem eu sodales aliquam.</p>" data-todoText='{"ops":[{"insert":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pulvinar feugiat consequat. Duis lacus nibh, sagittis id varius vel, aliquet non augue. Vivamus sem ante, ultrices at ex a, rhoncus ullamcorper tellus. Nunc iaculis eu ligula ac consequat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum mattis urna neque, eget posuere lorem tempus non. Suspendisse ac turpis dictum, convallis est ut, posuere sem. Etiam imperdiet aliquam risus, eu commodo urna vestibulum at. Suspendisse malesuada lorem eu sodales aliquam.\n"}]}'> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pulvinar feugiat consequat. Duis lacus nibh, sagittis id varius vel, aliquet non augue. Vivamus sem ante, ultrices at ex a, rhoncus ullamcorper tellus. Nunc iaculis eu ligula ac consequat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum mattis urna neque, eget posuere lorem tempus non. Suspendisse ac turpis dictum, convallis est ut, posuere sem. Etiam imperdiet aliquam risus, eu commodo urna vestibulum at. Suspendisse malesuada lorem eu sodales aliquam.</p>
-                                            </div>
-
-                                            <div class="priority-dropdown custom-dropdown-icon">
-                                                <div class="dropdown p-dropdown">
-                                                    <a class="dropdown-toggle primary" href="#" role="button" id="dropdownMenuLink-25" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-octagon">
-                                                            <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
-                                                            <line x1="12" y1="8" x2="12" y2="12"></line>
-                                                            <line x1="12" y1="16" x2="12" y2="16"></line>
-                                                        </svg>
-                                                    </a>
-
-                                                    <div class="dropdown-menu left" aria-labelledby="dropdownMenuLink-25">
-                                                        <a class="dropdown-item danger" href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-octagon">
-                                                                <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
-                                                                <line x1="12" y1="8" x2="12" y2="12"></line>
-                                                                <line x1="12" y1="16" x2="12" y2="16"></line>
-                                                            </svg> High</a>
-                                                        <a class="dropdown-item warning" href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-octagon">
-                                                                <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
-                                                                <line x1="12" y1="8" x2="12" y2="12"></line>
-                                                                <line x1="12" y1="16" x2="12" y2="16"></line>
-                                                            </svg> Middle</a>
-                                                        <a class="dropdown-item primary" href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-octagon">
-                                                                <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
-                                                                <line x1="12" y1="8" x2="12" y2="12"></line>
-                                                                <line x1="12" y1="16" x2="12" y2="16"></line>
-                                                            </svg> Low</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="action-dropdown custom-dropdown-icon">
-                                                <div class="dropdown">
-                                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink-7" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
-                                                            <circle cx="12" cy="12" r="1"></circle>
-                                                            <circle cx="12" cy="5" r="1"></circle>
-                                                            <circle cx="12" cy="19" r="1"></circle>
-                                                        </svg>
-                                                    </a>
-                                                    <div class="dropdown-menu left" aria-labelledby="dropdownMenuLink-7">
-                                                        <a class="edit dropdown-item" href="javascript:void(0);">Edit</a>
-                                                        <a class="dropdown-item delete" href="javascript:void(0);">Delete</a>
-                                                        <a class="dropdown-item permanent-delete" href="javascript:void(0);">Permanent Delete</a>
-                                                        <a class="dropdown-item revive" href="javascript:void(0);">Revive Defect</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
                                     <div class="modal fade" id="todoShowListItem" tabindex="-1" role="dialog" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
