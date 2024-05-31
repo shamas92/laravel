@@ -1,4 +1,5 @@
 <?php
+
 use App\Http\Controllers\defectController;
 
 //use Illuminate\Support\Facades\Route;
@@ -23,7 +24,7 @@ foreach ($prefixRouters as $prefixRouter) {
          *       @Router -  Dashboard
          * ==============================
          */
-        
+
         Route::prefix('dashboard')->group(function () {
             Route::get('/analytics', function () {
                 return view('pages.dashboard.analytics', ['title' => 'CRM Admin']);
@@ -32,24 +33,25 @@ foreach ($prefixRouters as $prefixRouter) {
                 return view('pages.dashboard.sales', ['title' => 'CRM Admin']);
             })->name('sales');
         });
-        
+
         /**
          * ==============================
          *        @Router -  Apps
          * ==============================
          */
-        
-         Route::prefix('app')->group(function () {
+
+        Route::prefix('app')->group(function () {
             Route::get('/product-defects', [defectController::class, 'defectlist']);
-            Route::get('delete/{id}', [defectController::class,'delete']);
-            
+            Route::get('delete/{id}', [defectController::class, 'delete']);
+            // routes/web.php
+            Route::get('/product-defects', [DefectController::class, 'index'])->name('defects.index');
+            Route::post('/product-defects', [DefectController::class, 'store'])->name('defects.store');
             Route::get('/feedbacks', function () {
                 return view('pages.app.feedbacks', ['title' => 'Feedbacks']);
             })->name('feedbacks');
             Route::get('/resolutions', function () {
                 return view('pages.app.resolutions', ['title' => 'Resolutions']);
             })->name('resolutions');
-        });   
         });
-    }
-    
+    });
+}

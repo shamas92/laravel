@@ -193,7 +193,8 @@
                                     <div class="modal-body">
                                         <div class="compose-box">
                                             <div class="compose-content" id="addTaskModalTitle">
-                                                <form>
+                                                <form method="POST" action="{{ route('defects.store') }}">
+                                                    @csrf
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="d-flex mail-to mb-4">
@@ -202,7 +203,7 @@
                                                                     <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
                                                                 </svg>
                                                                 <div class="w-100">
-                                                                    <input id="task" type="text" placeholder="Defect" class="form-control" name="task">
+                                                                    <input id="task" type="text" placeholder="Defect" class="form-control" name="defect_title" required>
                                                                     <span class="validation-text"></span>
                                                                 </div>
                                                             </div>
@@ -218,23 +219,23 @@
                                                             <polyline points="10 9 9 9 8 9"></polyline>
                                                         </svg>
                                                         <div class="w-100">
-                                                            <div id="taskdescription" class=""></div>
+                                                            <textarea id="taskdescription" class="form-control" name="description" placeholder="Description" required></textarea>
                                                             <span class="validation-text"></span>
                                                         </div>
                                                     </div>
 
+                                                    <div class="modal-footer">
+                                                        <button class="btn" data-bs-dismiss="modal"><i class="flaticon-cancel-12"></i> Discard</button>
+                                                        <button type="submit" class="btn btn-primary">Add Defect</button>
+                                                    </div>
                                                 </form>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="modal-footer">
-                                        <button class="btn btn-" data-bs-dismiss="modal"><i class="flaticon-cancel-12"></i> Discard</button>
-                                        <button class="btn add-tsk btn-primary">Add Defect</button>
-                                        <button class="btn edit-tsk btn-success">Save</button>
-                                    </div>
                                 </div>
                             </div>
                         </div>
+
 
                     </div>
                 </div>

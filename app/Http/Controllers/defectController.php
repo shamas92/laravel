@@ -29,4 +29,24 @@ class defectController extends Controller
 
         return redirect('light-menu/app/product-defects');
     }
+    public function index()
+    {
+        $defects = Defect::all();
+        return view('pages.app.product-defects', compact('defects'));
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'defect_title' => 'required|string|max:255',
+            'description' => 'required|string',
+        ]);
+
+        Defect::create([
+            'defect_title' => $request->defect_title,
+            'description' => $request->description,
+        ]);
+
+        return redirect()->route('defects.index')->with('success', 'Defect added successfully!');
+    }
 }

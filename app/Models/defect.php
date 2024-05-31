@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class defect extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'defect_title', 
+        'description',
+    ];
 }
