@@ -47,6 +47,20 @@ class defectController extends Controller
             'description' => $request->description,
         ]);
 
-        return redirect()->route('defects.index')->with('success', 'Defect added successfully!');
+        return redirect('light-menu/app/product-defects');
+    }
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'defect_title' => 'required|string|max:255',
+            'description' => 'required|string',
+        ]);
+
+        $defect = Defect::findOrFail($id);
+        $defect->defect_title = $request->input('defect_title');
+        $defect->description = $request->input('description');
+        $defect->save();
+
+        return redirect()->back()->with('success', 'Defect updated successfully');
     }
 }

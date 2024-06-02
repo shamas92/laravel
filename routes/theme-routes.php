@@ -46,6 +46,8 @@ foreach ($prefixRouters as $prefixRouter) {
             // routes/web.php
             Route::get('/product-defects', [DefectController::class, 'index'])->name('defects.index');
             Route::post('/product-defects', [DefectController::class, 'store'])->name('defects.store');
+            Route::post('/product-defects/{id}', [DefectController::class, 'update'])->name('defects.update');
+
             Route::get('/feedbacks', function () {
                 return view('pages.app.feedbacks', ['title' => 'Feedbacks']);
             })->name('feedbacks');

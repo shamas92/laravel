@@ -1,6 +1,6 @@
 <x-base-layout :scrollspy="false">
     <x-slot:pageTitle>
-        
+
         </x-slot>
 
         <!-- BEGIN GLOBAL MANDATORY STYLES -->
@@ -91,8 +91,9 @@
 
                                             <div class="todo-content">
                                                 <h5 class="todo-heading" data-todoHeading="{{$defs['defect_title']}}">{{$defs['defect_title']}}</h5>
-                                                <p class="todo-text" data-todoHtml="<p>{{$defs['description']}}</p>" data-todoText='{"ops":[{"insert":"{{$defs['defect_title']}}"}]}'>{{$defs['description']}}</p>
+                                                <p class="todo-text" data-todoHtml="{{$defs['description']}}" data-todoText='{"ops":[{"insert":"{{$defs['description']}}"}]}'></p>
                                             </div>
+
 
                                             <div class="priority-dropdown custom-dropdown-icon">
                                                 <div class="dropdown p-dropdown">
@@ -135,7 +136,8 @@
                                                     </a>
 
                                                     <div class="dropdown-menu left" aria-labelledby="dropdownMenuLink-2">
-                                                        <a class="edit dropdown-item" href="javascript:void(0);">Edit</a>
+
+                                                        <a class="edit dropdown-item" data-bs-toggle="modal" data-bs-target="#addTaskModal" data-mode="edit" data-id="{{ $defs['id'] }}" data-title="{{ $defs['defect_title'] }}" data-description="{{ $defs['description'] }}" data-url="{{ route('defects.update', $defs['id']) }}" >Edit</a>
                                                         <a class="dropdown-item delete" href="javascript:void(0);">Delete</a>
                                                         <a class="dropdown-item permanent-delete" href={{"delete/".$defs['id'] }}>Permanent Delete</a>
                                                         <a class="dropdown-item revive" href="javascript:void(0);">Revive Defect</a>
@@ -227,7 +229,7 @@
 
                                                     <div class="modal-footer">
                                                         <button class="btn" data-bs-dismiss="modal"><i class="flaticon-cancel-12"></i> Discard</button>
-                                                        <button type="submit" class="btn btn-primary">Add Defect</button>
+                                                        <button type="submit" class="btn btn-primary" id="modal-submit-button">Add Defect</button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -236,6 +238,9 @@
                                 </div>
                             </div>
                         </div>
+
+
+
 
 
                     </div>
